@@ -1,0 +1,11 @@
+version: '2.1'
+services:
+  postman_checks:
+    container_name: postmanCollection
+    build: .
+    image: postman_checks
+    command: run ./src/collection.json
+      -r htmlextra --reporter-htmlextra-darkTheme
+      -e postman_env_exec.json
+    volumes:
+      - ./:/etc/newman

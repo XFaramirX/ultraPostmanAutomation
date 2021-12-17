@@ -1,0 +1,19 @@
+{
+  "name": "api-postman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "sh ./envsubst.sh | newman run src/collection.json -e postman_env_exec.json && npm run deleteEnvFile",
+    "e2e": "sh ./envsubst.sh | newman run src/collection.json -e postman_env_exec.json -r htmlextra --reporter-htmlextra-darkTheme && yarn run deleteEnvFile && node main.js",
+    "dockerReport": "sh ./envsubst.sh && docker-compose up && node main.js && yarn deleteEnvFile",
+    "deleteEnvFile": "rm -f postman_env_exec.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^5.2.4",
+    "newman-reporter-htmlextra": "^1.22.0"
+  }
+}
