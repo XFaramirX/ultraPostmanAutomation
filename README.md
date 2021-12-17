@@ -75,6 +75,11 @@ Run collection inside docker and update latest index.html report.
 yarn dockerReport
 ```
 
+
+If you want to run the current collection IN POSTMAN APP just import both collections.js and postman_env.json to postman and add your current API Key and URL. See video for step by step how to accomplish this. 
+
+http://somup.com/crlbbU0MlK 
+
 ## Reporting
 
 Reporting Tools used:
